@@ -5,6 +5,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public string fileName;
     private float vehicleSpeed = 15.0f;
     private float turnSpeed = 20.0f;
     private float horizontalInput;
@@ -19,6 +20,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        // Get user's input
+        //Vertical and horizontal
+        horizontalInput = Input.GetAxis("Horizontal" + inputID);
+        forwardInput = Input.GetAxis("Vertical" + inputID);
+        // Move the vehicle forward
+        transform.Translate(Vector3.forward * Time.deltaTime * vehicleSpeed * forwardInput);
+        // Turn the vehicle
+        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
