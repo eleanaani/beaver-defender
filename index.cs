@@ -67,5 +67,9 @@ public class FollowPlayer : MonoBehaviour
             transform.rotation = Quaternion.Euler(behindViewRotation);
         }
         
+       else
+        {
+            transform.rotation = player.transform.rotation * Quaternion.Euler(firstViewRotation);
+        }
     }
 }
