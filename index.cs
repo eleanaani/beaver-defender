@@ -40,5 +40,14 @@ public class FollowPlayer : MonoBehaviour
         {
             isBehindView = !isBehindView;
         }
+
+        if (isBehindView)
+        {
+            // Offset behind view position and rotation by adding to the player's position
+            transform.position = player.transform.position + behindViewPosition;
+            transform.rotation = Quaternion.Euler(behindViewRotation);
+        }
+        
     }
+    
 }
