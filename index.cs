@@ -30,3 +30,15 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
+
+public class FollowPlayer : MonoBehaviour
+{
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        if (Input.GetKeyDown(switchKey))
+        {
+            isBehindView = !isBehindView;
+        }
+    }
+}
