@@ -5,7 +5,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public string fileName;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Get user's input
+        //Vertical and horizontal
         horizontalInput = Input.GetAxis("Horizontal" + inputID);
         forwardInput = Input.GetAxis("Vertical" + inputID);
         // Move the vehicle forward
