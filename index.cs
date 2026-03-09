@@ -69,6 +69,8 @@ public class FollowPlayer : MonoBehaviour
         
        else
         {
+             // Offset first person view position and rotation by adding to the player's position
+            transform.position = player.transform.position + firstViewPosition;
             transform.rotation = player.transform.rotation * Quaternion.Euler(firstViewRotation);
         }
     }
